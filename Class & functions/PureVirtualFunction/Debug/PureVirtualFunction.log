@@ -1,0 +1,6 @@
+﻿  Main.cpp
+Main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall D1::f(void)" (?f@D1@@UAEXXZ)
+Main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall D1::g(void)" (?g@D1@@UAEXXZ)
+Main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall D2::f(void)" (?f@D2@@UAEXXZ)
+Main.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall D3::g(void)" (?g@D3@@UAEXXZ)
+C:\Dev\CPPAdvanced\Class & functions\PureVirtualFunction\Debug\PureVirtualFunction.exe : fatal error LNK1120: 4 unresolved externals
