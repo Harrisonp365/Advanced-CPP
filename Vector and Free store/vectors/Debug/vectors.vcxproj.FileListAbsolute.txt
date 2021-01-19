@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\Vector and Free store\vectors\Debug\vectors.exe
+C:\Dev\CPPAdvanced\Vector and Free store\vectors\Debug\vectors.pdb
