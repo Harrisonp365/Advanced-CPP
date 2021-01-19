@@ -1,0 +1,14 @@
+﻿  Block.cpp
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(22,23): error C2131: expression did not evaluate to a constant
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(22,12): message : failure was caused by a read of a variable outside its lifetime
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(22,12): message : see usage of 'difficulty'
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(26,11): error C3863: array type 'char [difficulty+1]' is not assignable
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(28,19): error C3863: array type 'char [difficulty+1]' is not assignable
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(43,15): error C2079: 'ss' uses undefined class 'std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>>'
+C:\Dev\CPPAdvanced\BlockychainV1\src\Block.cpp(44,24): error C2677: binary '<<': no global operator found which takes type 'const std::string' (or there is no acceptable conversion)
+  SHA256.cpp
+C:\Dev\CPPAdvanced\BlockychainV1\src\SHA256.cpp(124,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Dev\CPPAdvanced\BlockychainV1\src\SHA256.cpp(130,49): error C2664: 'int sprintf_s(char *const ,const size_t,const char *const ,...)': cannot convert argument 2 from 'const char [5]' to 'const size_t'
+C:\Dev\CPPAdvanced\BlockychainV1\src\SHA256.cpp(130,32): message : There is no context in which this conversion is possible
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1833,41): message : see declaration of 'sprintf_s'
+  Generating Code...

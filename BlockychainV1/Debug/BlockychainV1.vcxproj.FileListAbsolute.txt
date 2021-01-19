@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\BlockychainV1\Debug\BlockychainV1.exe
+C:\Dev\CPPAdvanced\BlockychainV1\Debug\BlockychainV1.pdb
