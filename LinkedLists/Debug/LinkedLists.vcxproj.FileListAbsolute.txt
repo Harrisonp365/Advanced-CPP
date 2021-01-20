@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\LinkedLists\Debug\LinkedLists.exe
+C:\Dev\CPPAdvanced\LinkedLists\Debug\LinkedLists.pdb

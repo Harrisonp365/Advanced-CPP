@@ -19,10 +19,10 @@ private:
 	double* elem; // pointer to first element (double)
 };
 
-
 int main()
 {
-	vector v(5);
+	//Vector class
+	/* vector v(5);
 	for (int i = 0; i < v.size(); ++i)
 	{
 		v.set(i, 1.1 * i);
@@ -41,6 +41,30 @@ int main()
 		vector* q = f(4);
 		// use *q
 		delete q; // free vector on heap 
+	}
+	*/
+	// Void pointers
+
+	void* pv1 = new int; //converts int* to void*
+	void* pv2 = new double[10]; // converts double* to void*
+
+	void f(void* pv)
+	{
+		void* pv2 = pv; //copying is OK 
+		double* pd = pv; // error cant convert void* to double*
+		*pv = 7;         // error cant dereference a void* we don't know what type it points to
+
+		pv[2] = 9;      //error cant subscript a void*
+		int* pi = static_cast<int*>(pv); // OK, explicit conversion
+	}
+
+	//Reinterprit_cast and const_cast examples- Try not to use these
+
+	Register* in = reinterpret_cast<Register*>(0xff); //tells a certain part of memory beginning with 0xff is to be a register
+
+	void f(const Buffer* p)
+	{
+		Buffer* b = const_cast<Buffer*>(p); // cast away const
 	}
 	return 0;
 }
