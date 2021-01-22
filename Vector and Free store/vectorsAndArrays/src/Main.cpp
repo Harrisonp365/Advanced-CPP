@@ -2,7 +2,7 @@
 #include <vector>
 
 using namespace std;
-
+/*
 struct X {
 	int val;
 
@@ -22,9 +22,9 @@ X& refTo(X& a) { return a; }
 X* make(int i) { X a(i); return new X(a); }
 
 struct XX { X a; X b; };
-
+*/
 int main()
-{
+{	/*
 	X loc{ 4 }; //local variable
 	X loc2{ loc }; //copy constructor
 	loc = X{ 5 }; // copy assignment
@@ -40,4 +40,20 @@ int main()
 	delete p;
 	X* pp = new X[5]; // array of x's on heap
 	delete[] pp;
-}
+	*/
+	//Basic pointer arithmatic
+	const int max = 10;
+	int ar[max];
+	int* p = &ar[5]; //points to middle of array '5'
+
+	//subscript
+	*p = 7; // index 5 = 7
+	p[2] = 6; // 2 indexs up from 5 = 6. index 7 = 6
+	p[-3] = 9; // 3 indexs down from 5 = 9. index 2 = 9
+	p += 2; // p now points to index 7 not 5
+	p -= 5; // p now points to index 2 not 5
+	//print value of all elements
+	for (int* p = &ar[0]; p < &ar[max]; ++p) cout << *p << '\n';
+	//backwards
+	for (int* p = &ar[max-1]; p >= &ar[0]; --p) cout << *p << '\n';
+}	
