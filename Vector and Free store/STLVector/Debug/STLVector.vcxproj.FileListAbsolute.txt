@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\Debug\STLVector.exe
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\Debug\STLVector.pdb
