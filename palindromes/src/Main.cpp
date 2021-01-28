@@ -30,6 +30,7 @@ int main()
 }
 */
 //Checking using arrays
+/*
 bool isPalin(const char s[], int n) //s is the first character of the array
 {
 	int first = 0;
@@ -63,4 +64,34 @@ int main()
 	}
 	return 0;
 }
+*/
+// Same but done using pointers
+bool isPalin(const char* first, const char* last) //s is the first character of the array
+{
+	if (first < last)
+	{
+		if (*first != *last) return false;
+		return isPalin(first + 1, last - 1);
+	}
+	return true;
+}
 
+istream& readWord(istream& is, char* buffer, int max) // read at max 'max -1' character from 'is' into buffer
+{
+	is.width(max); // read max -1
+	is >> buffer;
+
+	return is;
+}
+
+int main()
+{
+	constexpr int max = 128;
+	for (char s[max]; readWord(cin, s, max);)
+	{
+		cout << s << " is";
+		if (!isPalin(&s[0], &s[strlen(s)-1])) cout << " not";
+		cout << " a palindrome\n";
+	}
+	return 0;
+}
