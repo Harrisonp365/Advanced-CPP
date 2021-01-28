@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\palindromes\Debug\palindromes.exe
+C:\Dev\CPPAdvanced\palindromes\Debug\palindromes.pdb
