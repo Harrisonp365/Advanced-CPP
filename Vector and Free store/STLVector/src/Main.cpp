@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
+template<typename T>
 class vector
 {
-	
 public:
 	vector() :sz{0}, elem{nullptr}, space{0}{}
-	explicit vector(int s) :sz{ s }, elem{ new double[s] }, space{ s }
+	explicit vector(int s) :sz{ s }, elem{ new T[s] }, space{ s }
 	{
 		for (int i = 0; i < sz; ++i) elem[i] = 0; //init
 	}
@@ -17,19 +17,19 @@ public:
 	vector& operator=(vector&&);
 	~vector() { delete[] elem; }
 
-	double& operator[](int n) { return elem[n]; }
-	const double& operator[](int n) const { return elem[n]; }
+	T& operator[](int n) { return elem[n]; }
+	const T& operator[](int n) const { return elem[n]; }
 
 	int size() const { return sz; }
 	int capacity() const { return space; }
 	void resize(int newSize);
-	void pushBack(double d);
+	void pushBack(const T& d);
 	void reserve(int newalloc);
 	
 	
 private:
 	int sz;
-	double* elem;
+	T* elem;
 	int space;
 };
 
