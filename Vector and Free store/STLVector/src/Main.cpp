@@ -1,10 +1,20 @@
 #include <iostream>
 using namespace std;
 
-template<typename T>
-class vector
-{
+template<typename T> class allocator {
 public:
+	//..
+	T* allocate(int n); //allocate space for n Objects of type T
+	void deAlloccate(T* p, int n); // deallocate n objects of Type T starting at p
+
+	void construct(T* p, const T& v); // construct a T with the value V in P
+	void destroy(T* p); // destroy the T in P
+};
+
+template<typename T, typename A = allocator<T>> 
+class vector {
+public:
+	A alloc; // use allocate to handle memory for elements
 	vector() :sz{0}, elem{nullptr}, space{0}{}
 	explicit vector(int s) :sz{ s }, elem{ new T[s] }, space{ s }
 	{
@@ -33,7 +43,8 @@ private:
 	int space;
 };
 
-void vector::reserve(int newalloc)
+template<typename T, typename A>
+void vector<T, A>::reserve(int newalloc)
 {
 	if (newalloc <= space) return;
 	double* p = new double[newalloc];
@@ -100,3 +111,4 @@ int main()
 
 	return 0;
 }
+
