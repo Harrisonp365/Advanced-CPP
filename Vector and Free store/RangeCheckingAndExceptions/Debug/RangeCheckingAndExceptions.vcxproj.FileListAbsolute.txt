@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\Vector and Free store\RangeCheckingAndExceptions\Debug\RangeCheckingAndExceptions.exe
+C:\Dev\CPPAdvanced\Vector and Free store\RangeCheckingAndExceptions\Debug\RangeCheckingAndExceptions.pdb
