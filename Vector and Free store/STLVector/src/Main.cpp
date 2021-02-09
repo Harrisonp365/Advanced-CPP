@@ -46,28 +46,32 @@ private:
 template<typename T, typename A>
 void vector<T, A>::reserve(int newalloc)
 {
-	if (newalloc <= space) return;
-	double* p = new double[newalloc];
-	for (int i = 0; i < sz; ++i) p[i] = elem[i];
-	delete[] elem;
+	if (newalloc <= space) return; // never decrease allocation
+	T* p = alloc.allocate(newalloc); // allocate new space
+	for (int i = 0; i < sz; ++i) alloc.construct(&p[i], elem[i]); // copy
+	for (int i = 0; i < sz; ++i) alloc.destroy(&elem[i]); //destroy
+	alloc.deallocate(elem, space); // deallocate old space
 	elem = p;
 	space = newalloc;
 }
 
-void vector::resize(int newSize)
+template<typename T, typename A>
+void vector<T, A>::resize(int newSize, T val = T())
 {
 	reserve(newSize);
-	for (int i = sz; i < newSize; ++i) elem[i] = 0;
+	for (int i = sz; i < newSize; ++i) alloc.construct(&elem[i], val; // construct
+	for (int i = newSize; i < sz; ++i) alloc.destroy(&elem[i]); // destroy
 	sz = newSize;
 }
 
-void vector::pushBack(double d)
+template<typename T, typename A>
+void vector<T, A>::pushBack(const T& val)
 {
 	if (space == 0)
 		reserve(8); //start space with 8 elements
 	else if (sz == space)
 		reserve(2 * space); // get more space ( double the space)
-	elem[sz] = d; // add d at end
+	alloc.construct(&elem[sz], val); // add val at end
 	++sz; //increase the size 
 }
 
