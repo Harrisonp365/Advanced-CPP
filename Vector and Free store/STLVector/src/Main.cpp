@@ -14,12 +14,19 @@ public:
 template<typename T, typename A = allocator<T>> 
 class vector {
 public:
+	T& at(int n); //checked access
+	const T& at(int n) const; // checked access
+
+	T& operator[](int n); //unchecked access
+	const T& operator[](int n) const; //unchecked access
+
 	A alloc; // use allocate to handle memory for elements
 	vector() :sz{0}, elem{nullptr}, space{0}{}
 	explicit vector(int s) :sz{ s }, elem{ new T[s] }, space{ s }
 	{
 		for (int i = 0; i < sz; ++i) elem[i] = 0; //init
 	}
+
 	vector(const vector&);
 	vector& operator=(const vector&);
 
@@ -27,8 +34,7 @@ public:
 	vector& operator=(vector&&);
 	~vector() { delete[] elem; }
 
-	T& operator[](int n) { return elem[n]; }
-	const T& operator[](int n) const { return elem[n]; }
+	
 
 	int size() const { return sz; }
 	int capacity() const { return space; }
@@ -43,6 +49,8 @@ private:
 	int space;
 };
 
+
+
 template<typename T, typename A>
 void vector<T, A>::reserve(int newalloc)
 {
@@ -56,7 +64,7 @@ void vector<T, A>::reserve(int newalloc)
 }
 
 template<typename T, typename A>
-void vector<T, A>::resize(int newSize, T val = T())
+void vector<T, A>::resize(int newSize)
 {
 	reserve(newSize);
 	for (int i = sz; i < newSize; ++i) alloc.construct(&elem[i], val; // construct
@@ -91,6 +99,11 @@ vector& vector::operator=(const vector& a)
 	space = sz = a.sz;
 	elem = p;
 	return *this;
+}
+
+template<typename T, typename A> T& vector<T, A>::operator[](int n)
+{
+	return elem[n];
 }
 
 vector::vector(vector&& a) : sz{a.sz}, elem{a.elem}
