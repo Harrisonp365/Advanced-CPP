@@ -1,6 +1,7 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-
+/*
 template<typename T> class allocator {
 public:
 	//..
@@ -10,7 +11,7 @@ public:
 	void construct(T* p, const T& v); // construct a T with the value V in P
 	void destroy(T* p); // destroy the T in P
 };
-
+*/
 template<typename T, typename A = allocator<T>> 
 class vector {
 public:
@@ -38,7 +39,7 @@ public:
 
 	int size() const { return sz; }
 	int capacity() const { return space; }
-	void resize(int newSize);
+	void resize(int newSize, T);
 	void pushBack(const T& d);
 	void reserve(int newalloc);
 	
@@ -49,7 +50,17 @@ private:
 	int space;
 };
 
+// range checking funcs
+template<typename T, typename A> T& vector<T, A>::at(int n)
+{
+	if (n < 0 || sz <= n) throw out_of_range();
+	return elem[n];
+}
 
+template<typename T, typename A> T& vector<T, A>::operator[](int n)
+{
+	return elem[n];
+}
 
 template<typename T, typename A>
 void vector<T, A>::reserve(int newalloc)
@@ -64,7 +75,7 @@ void vector<T, A>::reserve(int newalloc)
 }
 
 template<typename T, typename A>
-void vector<T, A>::resize(int newSize)
+void vector<T, A>::resize(int newSize, T val = T())
 {
 	reserve(newSize);
 	for (int i = sz; i < newSize; ++i) alloc.construct(&elem[i], val; // construct
@@ -124,7 +135,19 @@ vector& vector::operator=(vector&& a)
 
 int main()
 {
-
+	void print_some(vector<int>&v)
+	{
+		int i = -1;
+		while (cin >> i && i != -1)
+			try
+		{
+			cout << "v[" << i << "]==" << v.at(i) << "\n";
+		}
+		catch (out_of_range)
+		{
+			cout << "bad index: " << i << "\n";
+		}
+	}
 
 	return 0;
 }

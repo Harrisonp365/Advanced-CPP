@@ -1,29 +1,6 @@
 ﻿  Main.cpp
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(36,21): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(36,14): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(37,1): error C2509: 'reserve': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(46,14): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(47,1): error C2509: 'resize': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(53,14): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(54,1): error C2509: 'pushBack': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(63,17): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(65,1): error C2509: '=': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(81,9): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(81,28): error C2509: '{ctor}': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(81,33): error C2065: 'a': undeclared identifier
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(81,45): error C2065: 'a': undeclared identifier
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(87,17): error C2955: 'vector': use of class template requires template argument list
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(88,1): error C2509: '=': member function not declared in 'vector'
-C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(6): message : see declaration of 'vector'
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(55,42): error C2512: 'std::out_of_range': no appropriate default constructor available
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(57,1): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(55,42): message : 'out_of_range': function declaration must be available as none of the arguments depend on a template parameter
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(78): error C5037: 'vector<T,A>::resize': an out-of-line definition of a member of a class template cannot have default arguments
+C:\Dev\CPPAdvanced\Vector and Free store\STLVector\src\Main.cpp(80): fatal error C1075: '{': no matching token found
