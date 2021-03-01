@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Dev\CPPAdvanced\Data\dealingWithData\src\Main.cpp(12,29): error C2065: 'jill_high': undeclared identifier
+C:\Dev\CPPAdvanced\Data\dealingWithData\src\Main.cpp(12,63): error C2065: 'jack_high': undeclared identifier
+C:\Dev\CPPAdvanced\Data\dealingWithData\src\Main.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
