@@ -30,10 +30,11 @@ void fct()
 
 	vector<double>* jill_data = get_from_jill();
 
-	double h = -1;
-	double* jack_high; // point to higest val element
-	double* jill_high; // point to highst val element
+	double* jack_high = high(jack_data, jack_data + jack_count);
+	vector<double>& v = *jill_data;
+	double* jill_high = high(&v[0], &v[0] + v.size());
 
+	/*
 	for (int i = 0; i < jack_count; ++i)
 	{
 		if (h < jack_data[i])
@@ -44,15 +45,26 @@ void fct()
 	}
 
 	h = -1;
-	for (int i = 0; i < jill_data->size(); ++i)
+	vector<double>& v = *jill_data;
+	for (int i = 0; i < v.size(); ++i)
 	{
-		if (h < (*jill_data)[i])
+		if (h < v[i])
 		{
-			jill_high = &(*jill_data)[i]; // save address of larrgest elem
-			h = (*jill_data)[i]; // update largest elem
+			jill_high = &v[i]; // save address of larrgest elem
+			h = v[i]; // update largest elem
 		}
 	}
-
 	delete[] jack_data;
 	delete jill_data;
+	*/
+}
+
+double* high(double* first, double* last)
+// return a pointer to the element in [first,last] that has the highest value
+{
+	double h = -1;
+	double* high;
+	for(double * p = first; p != last; ++p)
+		if (h < *p) { high = p; h = *p; }
+	return high;
 }
