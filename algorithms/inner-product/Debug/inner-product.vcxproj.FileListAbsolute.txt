@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\algorithms\inner-product\Debug\inner-product.exe
+C:\Dev\CPPAdvanced\algorithms\inner-product\Debug\inner-product.pdb
