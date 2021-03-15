@@ -1,2 +1,10 @@
 ﻿  Main.cpp
-  inner-product.vcxproj -> C:\Dev\CPPAdvanced\algorithms\inner-product\Debug\inner-product.exe
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(27,20): error C2672: 'inner_product': no matching overloaded function found
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(28,61): error C2783: 'T inner_product(In,In,In2,T)': could not deduce template argument for 'BinOp'
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(12): message : see declaration of 'inner_product'
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(28,61): error C2783: 'T inner_product(In,In,In2,T)': could not deduce template argument for 'BinOp2'
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(12): message : see declaration of 'inner_product'
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(30,11): error C2143: syntax error: missing ';' before '<<'
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(30,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Dev\CPPAdvanced\algorithms\inner-product\src\Main.cpp(30,6): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\iostream(41): message : see declaration of 'std::cout'
