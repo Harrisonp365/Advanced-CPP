@@ -28,11 +28,42 @@ struct Mail_file {
 
 	Mess_iter begin() const { return m.begin(); }
 	Mess_iter end() const { return m.end(); }
+
+	bool find_from_addr(const Message* m, string& s);
+	string find_subject(const Message* m);
 };
 
 
 int main()
 {
+	Mail_file mFile{ "my-mail-file.txt" };
 
-	return 0;
+	multimap<string, const Message*> sender;
+
+	for (const auto& m : mFile)
+	{
+		string s;
+		if (find_from_address(&m, s))
+			sender.insert(make_pair(s, &m));
+	}
+
+	auto pp = sender.equal_range("John Doe <jdoe@machine.example>");
+	for (auto p == pp.first; p != pp.second; ++p)
+		cout << find_subject(p->second) << "\n";
+
+}
+
+Mail_file::Mail_file(const string& n)
+{
+
+}
+
+bool Mail_file::find_from_addr(const Message* m, string& s)
+{
+	return false;
+}
+
+string Mail_file::find_subject(const Message* m)
+{
+	return string();
 }
