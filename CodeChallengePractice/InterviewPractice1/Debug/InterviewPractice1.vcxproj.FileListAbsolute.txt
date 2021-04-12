@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\CodeChallengePractice\InterviewPractice1\Debug\InterviewPractice1.exe
+C:\Dev\CPPAdvanced\CodeChallengePractice\InterviewPractice1\Debug\InterviewPractice1.pdb
