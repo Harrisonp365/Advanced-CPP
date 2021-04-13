@@ -88,7 +88,7 @@ public:
 		std::cout << "\n";
 	}
 
-	void loopDetection()
+	void LoopDetection()
 	{
 		Node* slowPtr = head;
 		Node* fastPtr = head;
@@ -104,25 +104,87 @@ public:
 		}
 		std::cout << "The middle of the list is: " << slowPtr->data;
 	}
+
+	Node* MergeList(Node* sorted_list)
+	{
+		Node* result = new Node(0);
+		Node* iterator = result;
+		Node* current_list = this->head;
+
+		while (current_list && sorted_list)
+		{
+			if (current_list->data < sorted_list->data)
+			{
+				iterator->next = current_list;
+				current_list = current_list->next;
+			}
+			else
+			{
+				iterator->next = sorted_list;
+				sorted_list = sorted_list->next;
+			}
+			iterator = iterator->next;
+		}
+		iterator->next = ( current_list != nullptr ) ? current_list : sorted_list;
+		return result->next;
+	}
+
+	friend void PrintListV2(Node* head);
 };
+
+void PrintListV2(Node* head)
+{
+	while (head)
+	{
+		std::cout << head->data << "  ";
+		head = head->next;
+	}
+}
 
 int main()
 {
-	LinkedList myList;
+	/*
+	LinkedList list1;
+	Node* n1 = new Node(2);
+	Node* n2 = new Node(4);
+	Node* n3 = new Node(6);
+	Node* n4 = new Node(8);
+	Node* n5 = new Node(10);
+	list1.AddNodeWithNode(n1);
+	list1.AddNodeWithNode(n2);
+	list1.AddNodeWithNode(n3);
+	list1.AddNodeWithNode(n4);
+	list1.AddNodeWithNode(n5);
+	
+
+	LinkedList list2;
 	Node* n1 = new Node(1);
-	Node* n2 = new Node(2);
-	Node* n3 = new Node(3);
-	Node* n4 = new Node(4);
-	Node* n5 = new Node(5);
-	myList.AddNodeWithNode(n1);
-	myList.AddNodeWithNode(n2);
-	myList.AddNodeWithNode(n3);
-	myList.AddNodeWithNode(n4);
-	myList.AddNodeWithNode(n5);
-	myList.loopDetection();
-	n5->next = n2;
-	std::cout << "\n";
-	myList.loopDetection();
+	Node* n2 = new Node(3);
+	Node* n3 = new Node(5);
+	Node* n4 = new Node(7);
+	Node* n5 = new Node(9);
+	list2.AddNodeWithNode(n1);
+	list2.AddNodeWithNode(n2);
+	list2.AddNodeWithNode(n3);
+	list2.AddNodeWithNode(n4);
+	list2.AddNodeWithNode(n5);
+	*/
+	LinkedList* List1 = new LinkedList();
+	List1->AddNodeByIntToEnd(1);
+	List1->AddNodeByIntToEnd(3);
+	List1->AddNodeByIntToEnd(5);
+	List1->AddNodeByIntToEnd(7);
+	List1->AddNodeByIntToEnd(9);
+
+	LinkedList* List2 = new LinkedList();
+	List2->AddNodeByIntToEnd(2);
+	List2->AddNodeByIntToEnd(4);
+	List2->AddNodeByIntToEnd(6);
+	List2->AddNodeByIntToEnd(8);
+	List2->AddNodeByIntToEnd(10);
+
+	Node* result_list = List1->MergeList(List2->head);
+	PrintListV2(result_list);
 
 	return 0;
 }
