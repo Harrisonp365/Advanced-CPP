@@ -43,6 +43,35 @@ public:
 		temp->next = node_to_add;
 		return;
 	}
+
+	void DeleteNodeByInt(int delete_int)
+	{
+		Node* temp = head;
+		Node* prev = head;
+		if (!head)
+			return;
+		if (head->data == delete_int)
+		{
+			head = temp->next;
+			delete(temp);
+			return;
+		}
+		while (temp != nullptr && temp->data != delete_int)
+		{
+			prev = temp;
+			temp = temp->next;
+		}
+		if (temp == nullptr)
+		{
+			std::cout << "int to delete does not exist\n";
+			return;
+		}
+		
+		prev->next = temp->next;
+		std::cout << delete_int << " was found and deleted\n";
+		delete(temp);
+	}
+
 	void PrintList()
 	{
 		if (!head)
@@ -58,15 +87,42 @@ public:
 		}
 		std::cout << "\n";
 	}
+
+	void loopDetection()
+	{
+		Node* slowPtr = head;
+		Node* fastPtr = head;
+		while (slowPtr && fastPtr && fastPtr->next)
+		{
+			slowPtr = slowPtr->next;
+			fastPtr = fastPtr->next->next;
+			if (slowPtr == fastPtr)
+			{
+				std::cout << "There is a loop in this list\n";
+				return;
+			}
+		}
+		std::cout << "The middle of the list is: " << slowPtr->data;
+	}
 };
 
 int main()
 {
 	LinkedList myList;
-	myList.AddNodeByIntToEnd(1);
-	Node* n1 = new Node(2);
+	Node* n1 = new Node(1);
+	Node* n2 = new Node(2);
+	Node* n3 = new Node(3);
+	Node* n4 = new Node(4);
+	Node* n5 = new Node(5);
 	myList.AddNodeWithNode(n1);
-	myList.AddNodeByIntToEnd(999);
-	myList.PrintList();
+	myList.AddNodeWithNode(n2);
+	myList.AddNodeWithNode(n3);
+	myList.AddNodeWithNode(n4);
+	myList.AddNodeWithNode(n5);
+	myList.loopDetection();
+	n5->next = n2;
+	std::cout << "\n";
+	myList.loopDetection();
+
 	return 0;
 }
