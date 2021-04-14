@@ -1,0 +1,5 @@
+﻿  Main.cpp
+C:\Dev\CPPAdvanced\CodeChallengePractice\BinarySearchTrees\src\Main.cpp(52,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Dev\CPPAdvanced\CodeChallengePractice\BinarySearchTrees\src\Main.cpp(71,19): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Dev\CPPAdvanced\CodeChallengePractice\BinarySearchTrees\src\Main.cpp(85): warning C4715: 'BST::SmallestRightSubtree': not all control paths return a value
+  BinarySearchTrees.vcxproj -> C:\Dev\CPPAdvanced\CodeChallengePractice\BinarySearchTrees\Debug\BinarySearchTrees.exe
