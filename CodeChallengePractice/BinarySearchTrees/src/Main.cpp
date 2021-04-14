@@ -18,6 +18,9 @@ public:
 	BinaryTreeNode*& BST_Search(BinaryTreeNode*& root, int key);
 	void DeleteNode(int data);
 	int SmallestRightSubtree(BinaryTreeNode* rightNode);
+	bool identicalTree(BinaryTreeNode* other_tree);
+private:
+	bool identicalTreeHelper(BinaryTreeNode* first, BinaryTreeNode* second);
 };
 
 void BST::BST_Insert(BinaryTreeNode*& head, int data)
@@ -84,17 +87,42 @@ int BST::SmallestRightSubtree(BinaryTreeNode* rightNode)
 	}
 }
 
+bool BST::identicalTree(BinaryTreeNode* other_tree)
+{
+	return identicalTreeHelper(this->head, other_tree);
+}
+
+bool BST::identicalTreeHelper(BinaryTreeNode* first, BinaryTreeNode* second)
+{
+	if (first == nullptr && second == nullptr)
+		return true;
+	if ((first && second) && (first->data_ == second->data_))
+	{
+		bool left_subtree = identicalTreeHelper(first->left_, second->left_);
+		bool right_subtree = identicalTreeHelper(first->right_, second->right_);
+		return (left_subtree && right_subtree);
+	}
+	return false;
+}
+
 int main()
 {
-	BST bst;
-	bst.BST_Insert(bst.head, 3);
-	bst.BST_Insert(bst.head, 5);
-	bst.BST_Insert(bst.head, 1);
-	bst.BST_Insert(bst.head, 2);
+	BST bst1;
+	bst1.BST_Insert(bst1.head, 10);
+	bst1.BST_Insert(bst1.head, 20);
+	bst1.BST_Insert(bst1.head, 18);
+	bst1.BST_Insert(bst1.head, 6);
+	bst1.BST_Insert(bst1.head, 5);
+	bst1.BST_Insert(bst1.head, 7);
 
-	bst.DeleteNode(1);
+	BST bst2;
+	bst2.BST_Insert(bst2.head, 10);
+	bst2.BST_Insert(bst2.head, 20);
+	bst2.BST_Insert(bst2.head, 8);
+	bst2.BST_Insert(bst2.head, 6);
+	bst2.BST_Insert(bst2.head, 5);
+	bst2.BST_Insert(bst2.head, 7);
 
-	BinaryTreeNode* found_1 = bst.BST_Search(bst.head, 1);
-	std::cout << found_1->data_ << "  " << found_1->left_ << "  " << found_1->right_;
+	std::cout << bst1.identicalTree(bst2.head);
 	return 0;
 }
