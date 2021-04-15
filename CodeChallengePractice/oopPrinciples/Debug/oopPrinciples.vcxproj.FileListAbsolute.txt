@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\CodeChallengePractice\oopPrinciples\Debug\oopPrinciples.exe
+C:\Dev\CPPAdvanced\CodeChallengePractice\oopPrinciples\Debug\oopPrinciples.pdb
