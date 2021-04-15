@@ -4,7 +4,7 @@ using namespace std;
 
 //default constructor should be here
 
-Person Person::operator+(Person p) 
+Person Person::operator+(Person p)
 { 
 	return Person(this->name_ + p.name_); 
 }
@@ -12,6 +12,11 @@ Person Person::operator+(Person p)
 Person& Person::operator=(const Person& p) 
 { 
 	this->name_ = p.name_; this->id_ = p.id_; return *this; 
+}
+
+void Person::func()
+{
+	cout << "func from Person\n";
 }
 
 Person::~Person()
