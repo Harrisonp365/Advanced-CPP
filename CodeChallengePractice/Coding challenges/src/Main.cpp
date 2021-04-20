@@ -213,4 +213,94 @@ int f(int n)
 		return arr[n];
 	}
 }
+-----------------------------------------------------------------------------------------------
+/////////////////////////////////// HackerRank Box It ////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+public:
+	Box();
+	Box(int l, int b, int h);
+	Box(const Box box);
+
+	int getLength(); // return box length
+	int getBreadth();
+	int getHeight();
+	long long CalculateVolume();
+
+	friend bool operator<(Box& b1, Box& b2);
+	friend ostream& operator<<(ostream& out, Box& B);
+private:
+	int l;
+	int b;
+	int h;
+};
+
+int main()
+{
+
+
+	return 0;
+}
+
+Box::Box()
+{
+	l = 0;
+	b = 0;
+	h = 0;
+}
+
+Box::Box(int length, int breadth, int height)
+{
+	l = length;
+	b = breadth;
+	h = height;
+}
+
+Box::Box(const Box& B)
+{
+	l = B.l;
+	b = B.b;
+	h = B.h;
+}
+
+int Box::getLength()
+{
+	return (l);
+}
+
+int Box::getBreadth()
+{
+	return (b);
+}
+
+int Box::getHeight()
+{
+	return (h);
+}
+
+long long Box::CalculateVolume()
+{
+	return ((long long)l * b * h);
+}
+
+bool operator<(Box& b1, Box& b2)
+{
+	if ((b1.l < b2.l) || (b1.b < b2.b && b1.l == b2.l) ||
+		(b1.h < b2.h && b1.b == b2.b && b1 == b2.l))
+		return (true);
+	else
+		return (false);
+}
+
+ostream& operator<<(ostream& out, Box& B)
+{
+	out << B.l << " " << B.b << " " << B.h;
+	return out;
+}
+
 */
+

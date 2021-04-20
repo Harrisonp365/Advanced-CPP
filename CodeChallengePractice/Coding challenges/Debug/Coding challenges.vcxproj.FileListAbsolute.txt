@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\Debug\Coding challenges.exe
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\Debug\Coding challenges.pdb

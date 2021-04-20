@@ -1,0 +1,12 @@
+﻿  Main.cpp
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(229,5): error C2652: 'Box': illegal copy constructor: first parameter must not be a 'Box'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(224): message : see declaration of 'Box'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(266,1): error C2511: 'Box::Box(const Box &)': overloaded member function not found in 'Box'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(224): message : see declaration of 'Box'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(267,2): error C2597: illegal reference to non-static member 'Box::l'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(239): message : see declaration of 'Box::l'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(268,2): error C2597: illegal reference to non-static member 'Box::b'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(240): message : see declaration of 'Box::b'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(269,2): error C2597: illegal reference to non-static member 'Box::h'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(241): message : see declaration of 'Box::h'
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(295,38): error C2676: binary '==': 'Box' does not define this operator or a conversion to a type acceptable to the predefined operator
