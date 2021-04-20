@@ -215,79 +215,75 @@ int f(int n)
 }
 -----------------------------------------------------------------------------------------------
 /////////////////////////////////// HackerRank Box It ////////////////////////////////////
-
-#include <iostream>
-using namespace std;
-
-class Box
+//class Box
 {
 public:
 	Box();
-	Box(int l, int b, int h);
-	Box(const Box box);
+	//Box(int l, int b, int h);
+	//Box(const Box box);
 
-	int getLength(); // return box length
-	int getBreadth();
-	int getHeight();
-	long long CalculateVolume();
+	//int getLength(); // return box length
+	//int getBreadth();
+	//int getHeight();
+	//long long CalculateVolume();
 
-	friend bool operator<(Box& b1, Box& b2);
-	friend ostream& operator<<(ostream& out, Box& B);
+	//friend bool operator<(Box& b1, Box& b2);
+	//friend ostream& operator<<(ostream& out, Box& B);
 private:
-	int l;
-	int b;
-	int h;
+	//int l;
+	//int b;
+	//int h;
 };
 
-int main()
+//int main()
 {
 
 
 	return 0;
 }
 
-Box::Box()
+//Box::Box()
 {
 	l = 0;
 	b = 0;
 	h = 0;
 }
 
-Box::Box(int length, int breadth, int height)
+//Box::Box(int length, int breadth, int height)
 {
 	l = length;
 	b = breadth;
 	h = height;
 }
 
-Box::Box(const Box& B)
+//Box::Box(const Box& B)
 {
 	l = B.l;
 	b = B.b;
 	h = B.h;
 }
 
-int Box::getLength()
+//int Box::getLength()
 {
 	return (l);
 }
 
-int Box::getBreadth()
+//int Box::getBreadth()
 {
 	return (b);
 }
 
-int Box::getHeight()
+//int Box::getHeight()
 {
 	return (h);
 }
 
-long long Box::CalculateVolume()
+//long long Box::CalculateVolume()
 {
 	return ((long long)l * b * h);
 }
 
-bool operator<(Box& b1, Box& b2)
+//bool operator<(Box& b1, Box& b2)
 {
 	if ((b1.l < b2.l) || (b1.b < b2.b && b1.l == b2.l) ||
 		(b1.h < b2.h && b1.b == b2.b && b1 == b2.l))
@@ -296,11 +292,37 @@ bool operator<(Box& b1, Box& b2)
 		return (false);
 }
 
-ostream& operator<<(ostream& out, Box& B)
+//ostream& operator<<(ostream& out, Box& B)
 {
 	out << B.l << " " << B.b << " " << B.h;
 	return out;
 }
 
 */
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+double eval(double x)
+{
+	return x / (.5 * x);
+}
+
+void use(double n)
+{
+	int v = 1 / n
+		;
+	v 
+}
+int main()
+{
+	
+	float x = 1.0 / 5.0;
+	int i = x;
+
+	cout << i;
+	return 0;
+}
 
