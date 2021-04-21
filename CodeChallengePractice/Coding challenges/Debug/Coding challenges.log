@@ -1,4 +1,2 @@
 ﻿  Main.cpp
-C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(325,21): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(326,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Coding challenges.vcxproj -> C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\Debug\Coding challenges.exe

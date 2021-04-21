@@ -305,24 +305,26 @@ private:
 #include <vector>
 
 using namespace std;
-double eval(double x)
-{
-	return x / (.5 * x);
-}
 
-void use(double n)
-{
-	int v = 1 / n
-		;
-	v 
-}
+
 int main()
 {
-	
-	float x = 1.0 / 5.0;
-	int i = x;
+		int n;
+		cin >> n;
 
-	cout << i;
+		vector<int> vec;
+		for(int i = 0; i < n; i++)
+		{
+			int num;
+			cin >> num;
+			vec.push_back(num);
+		}
+		
+		for (auto it = vec.rbegin(); it != vec.rend(); it++)
+		{
+			cout << *it << " ";
+		}
+		
+
 	return 0;
 }
-
