@@ -297,34 +297,69 @@ private:
 	out << B.l << " " << B.b << " " << B.h;
 	return out;
 }
+------------------------------------------------------------------------------------------------
+////////////////////////////////////// HOURGLASS ////////////////////////////////////////////
+OPTION1:
+int hourGlassSum(vector<vector<int>>arr)
+{
+	int result = -63;
 
-*/
+	for(int row = 0; row <= 3; ++row)
+	{
+		for(int col = 0; col <= 3; ++col)
+		{
+			int sum = arr[row][col] + arr[row][col + 1] + arr[row][col + 2] + arr[row + 1][col +1]
+			+ arr[row + 2][col] + arr[row +2][col + 1] + arr[row + 2] [col + 2];
 
-#include <iostream>
-#include <string>
-#include <vector>
+			result = std::max(result, sum);
+ 		}
+	}
+	return result;
 
-using namespace std;
-
+}
 
 int main()
 {
-		int n;
-		cin >> n;
+	vector<vector<int>> arr(6);
+	for (int i = 0; i < 6; i++) {
+		arr[i].resize(6);
 
-		vector<int> vec;
-		for(int i = 0; i < n; i++)
-		{
-			int num;
-			cin >> num;
-			vec.push_back(num);
+		for (int j = 0; j < 6; j++) {
+			cin >> arr[i][j];
 		}
-		
-		for (auto it = vec.rbegin(); it != vec.rend(); it++)
-		{
-			cout << *it << " ";
-		}
-		
 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+
+	int result = hourGlassSum(arr);
+	cout << result << "\n";
 	return 0;
 }
+
+OPTION2:
+
+int hourGlassSum(vector<vector<int>>arr)
+{
+	int maxSum = -63;
+
+	for(int i = 0; i < arr.size() - 2; i++)
+	{
+		for(int j = 2; j < arr[0].size(); j++)
+		{
+			int k = j -2, hourglass = 0;
+
+			 while(k <= j)
+			{
+				hourglass += arr[i][k] + arr[i + 2][k];
+				++k;
+			}
+			hourglass += arr[i + 1][j - 1]; //middle val
+			maxSum = max(hourglass, maxSum);
+		}
+	}
+	return maxSum;
+}
+
+same main loop;
+*/
+
