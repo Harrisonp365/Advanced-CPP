@@ -426,6 +426,101 @@ class Student :  public Person{
 		}
 };
 -------------------------------------------------------------------------------------------------
-/////////////////////////////////
+///////////////////////////////// QUEUE AND STACK PALINDROME//////////////////////////////////
+
+#include <iostream>
+#include <stack>
+#include <queue>
+
+using namespace std;
+
+class Solution {
+public:
+	void pushCharacter(char ch)
+	{
+		st.push(ch);
+	}
+
+	void enqueueCharacter(char ch)
+	{
+		qu.push(ch);
+	}
+
+	char popCharacter()
+	{
+		c = st.top();
+		st.pop();
+		return c;
+	}
+	char dequeueCharacter()
+	{
+		c = qu.front();
+		qu.pop();
+		return c;
+	}
+private:
+	char c;
+	stack<char>st;
+	queue<char>qu;
+
+};
+
+int main() {
+	// read the string s.
+	string s;
+	getline(cin, s);
+
+	// create the Solution class object p.
+	Solution obj;
+
+	// push/enqueue all the characters of string s to stack.
+	for (int i = 0; i < s.length(); i++) {
+		obj.pushCharacter(s[i]);
+		obj.enqueueCharacter(s[i]);
+	}
+
+	bool isPalindrome = true;
+
+	// pop the top character from stack.
+	// dequeue the first character from queue.
+	// compare both the characters.
+	for (int i = 0; i < s.length() / 2; i++) {
+		if (obj.popCharacter() != obj.dequeueCharacter()) {
+			isPalindrome = false;
+
+			break;
+		}
+	}
+
+	// finally print whether string s is palindrome or not.
+	if (isPalindrome) {
+		cout << "The word, " << s << ", is a palindrome.";
+	} else {
+		cout << "The word, " << s << ", is not a palindrome.";
+	}
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------------
+
 */
 
+#include <iostream>
+#include <exception>
+#include <stdexcept>
+#include <string>
+using namespace std;
+
+enum e{a = 1, b, c, d};
+e& operator--(e& x) {
+	x = b; return x;
+}
+
+int main(void)
+{
+	e f = c;
+	cout << int(f--);
+
+	
+	return 0;
+}
