@@ -12,12 +12,16 @@ struct TreeNode
 
 int main()
 {
-    TreeNode foo(5);
+    //create a tree with 4 left child and 6 right child
+
+    TreeNode root(5);
+    TreeNode leftChild(4);
+    TreeNode rightChild(6);
+
+    //connect Nodes
+    root.left = &leftChild;
+    root.right = &rightChild;
 
     // Print info about foo
-    std::cout <<
-        "data: " << foo.data <<
-        ", left: " << foo.left <<
-        ", right: " << foo.right <<
-        std::endl;
+    std::cout << "data: " << root.data << ", left: " << root.left->data << ", right: " << root.right->data << std::endl;
 }
