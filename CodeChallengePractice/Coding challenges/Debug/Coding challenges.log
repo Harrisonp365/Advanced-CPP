@@ -1,2 +1,2 @@
 ﻿  Main.cpp
-C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(446,15): error C2676: binary '--': 'e' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Dev\CPPAdvanced\CodeChallengePractice\Coding challenges\src\Main.cpp(522,15): error C2676: binary '--': 'e' does not define this operator or a conversion to a type acceptable to the predefined operator

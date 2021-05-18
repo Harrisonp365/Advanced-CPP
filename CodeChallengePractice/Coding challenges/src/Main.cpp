@@ -502,25 +502,24 @@ int main() {
 	return 0;
 }
 -------------------------------------------------------------------------------------------------
+/////////////////////////////////////////BINARY SEARCH TREE CHECK////////////////////////////////
 
+int isBST(struct node* node)
+{
+if(node == NULL)
+	return 1;
+	//false if the max of the left is > than us
+if(node->right != NULL && maxValue(node->left) > node->data)
+	return 0;
+	//false if the min of the right is <= than us
+	if(node->right != NULL && minValue(node->right) < node->data)
+		return 0;
+	// false is recursively the left or right is not a BST
+	if(!isBST(node->left) || !isBST(node->right))
+	return 0;
+
+	// if passes all conditions it is a BST
+	return 1;
 */
 
-#include <iostream>
-#include <exception>
-#include <stdexcept>
-#include <string>
-using namespace std;
 
-enum e{a = 1, b, c, d};
-e& operator--(e& x) {
-	x = b; return x;
-}
-
-int main(void)
-{
-	e f = c;
-	cout << int(f--);
-
-	
-	return 0;
-}

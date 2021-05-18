@@ -1,0 +1,2 @@
+C:\Dev\CPPAdvanced\CodeChallengePractice\BST\Debug\BST.exe
+C:\Dev\CPPAdvanced\CodeChallengePractice\BST\Debug\BST.pdb
